@@ -1,7 +1,7 @@
 {
   "site": {
-    "title": "Dreamifly - Free AI Art Generator Online | One-Click Anime, Illustration, and Art Creation",
-    "description": "Dreamifly is a free AI art website that requires no registration. It supports various styles including anime, illustration, and 3D art. Users can quickly generate high-quality images through text or reference images. As an advanced AI image generation tool, it provides a smooth and intelligent creative experience. Suitable for designers and art enthusiasts, making AI drawing easy and can generate images with AI anytime"
+    "title": "FastImage AI - Free AI Art Generator Online | One-Click Anime, Illustration, and Art Creation",
+    "description": "FastImage AI is a free AI art website that requires no registration. It supports various styles including anime, illustration, and 3D art. Users can quickly generate high-quality images through text or reference images. As an advanced AI image generation tool, it provides a smooth and intelligent creative experience. Suitable for designers and art enthusiasts, making AI drawing easy and can generate images with AI anytime"
   },
   "home": {
     "hero": {
@@ -12,7 +12,7 @@
         "highlight": "Free Unlimited",
         "suffix": "providing distributed computing support."
       },
-      "description": "Dreamifly - Free AI Art Generator Online | One-Click Anime, Illustration, and Art Creation",
+      "description": "FastImage AI - Free AI Art Generator Online | One-Click Anime, Illustration, and Art Creation",
       "startButton": "Start Creating",
       "faqButton": "FAQ",
       "imageCaption": "AI Art",
@@ -209,27 +209,27 @@
       "title": "Frequently Asked Questions",
       "questions": [
         {
-          "q": "What is Dreamifly?",
-          "a": "Dreamifly is a completely free online service based on multiple AI art models, supporting both text-to-image and image-to-image generation. It is an excellent AI design and drawing tool, supporting various styles such as realistic, anime, illustration, and 3D. Feel free to unleash your creativity here!"
+          "q": "What is FastImage AI ?",
+          "a": "FastImage AI  is a completely free online service based on multiple AI art models, supporting both text-to-image and image-to-image generation. It is an excellent AI design and drawing tool, supporting various styles such as realistic, anime, illustration, and 3D. Feel free to unleash your creativity here!"
         },
         {
-          "q": "Is Dreamifly completely free?",
+          "q": "Is FastImage AI  completely free?",
           "a": "Yes, we provide completely free image generation services."
         },
         {
-          "q": "What kind of images can Dreamifly create?",
+          "q": "What kind of images can FastImage AI  create?",
           "a": "Various styles, realistic scenes, artistic illustrations, anime-style portraits, and more."
         },
         {
-          "q": "Can I use Dreamifly-generated images for commercial purposes?",
+          "q": "Can I use FastImage AI -generated images for commercial purposes?",
           "a": "Yes, you have full rights to use the generated images for both personal and commercial purposes."
         },
         {
-          "q": "What models does Dreamifly provide?",
+          "q": "What models does FastImage AI  provide?",
           "a": "HiDream-I1 Full Version, Flux.1-Dev, and more open-source models in the future."
         },
         {
-          "q": "Do I need to create an account and log in to use Dreamifly?",
+          "q": "Do I need to create an account and log in to use FastImage AI ?",
           "a": "No, you can directly use our image generation features."
         }
       ]
@@ -310,7 +310,7 @@
     "community": "Community",
 
     "quickGenerate": "Quick Generate",
-    "siteName": "Dreamifly",
+    "siteName": "FastImage AI",
     "switchLanguage": "Switch Language",
     "friends": "Friends",
     "workflows": "Workflows"
@@ -337,7 +337,7 @@
     }
   },
   "footer": {
-    "copyright": "Dreamifly. All rights reserved."
+    "copyright": "FastImage AI. All rights reserved."
   },
   "auth": {
     "login": "Login",

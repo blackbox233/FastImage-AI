@@ -278,7 +278,7 @@ export default function StyleTransferForm({
   }
 
   return (
-    <div className="relative bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl p-8 border border-orange-400/40">
+    <div className="relative bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl p-8 border border-blue-400/40">
       <div className="space-y-6">
       {/* 图片上传区域 */}
       <div>
@@ -290,7 +290,7 @@ export default function StyleTransferForm({
           <div className="grid grid-cols-1 gap-6">
             {/* 只显示第一张图片 */}
             {uploadedImages.length > 0 && (
-              <div className="group relative aspect-[4/3] rounded-2xl overflow-hidden border border-orange-400/40 bg-white/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-orange-400/50">
+              <div className="group relative aspect-[4/3] rounded-2xl overflow-hidden border border-blue-400/40 bg-white/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-blue-400/50">
                 <Image
                   src={`data:image/jpeg;base64,${uploadedImages[0]}`}
                   alt="Reference image"
@@ -298,13 +298,13 @@ export default function StyleTransferForm({
                   className="object-contain"
                 />
                 {/* 图片标记 */}
-                <div className="absolute bottom-3 left-3 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full text-xs font-semibold text-gray-900 border border-orange-400/40 shadow-lg">
+                <div className="absolute bottom-3 left-3 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full text-xs font-semibold text-gray-900 border border-blue-400/40 shadow-lg">
                   Reference Image
                 </div>
                 <button
                   type="button"
                   onClick={handleRemoveImage}
-                  className="absolute top-3 right-3 p-2 bg-white/90 backdrop-blur-sm rounded-full text-gray-900 hover:text-red-500 hover:bg-red-100/20 transition-all duration-300 shadow-lg border border-orange-200/50 hover:border-red-500/50 opacity-0 group-hover:opacity-100"
+                  className="absolute top-3 right-3 p-2 bg-white/90 backdrop-blur-sm rounded-full text-gray-900 hover:text-red-500 hover:bg-red-100/20 transition-all duration-300 shadow-lg border border-blue-200/50 hover:border-red-500/50 opacity-0 group-hover:opacity-100"
                   aria-label="Remove image"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -323,8 +323,8 @@ export default function StyleTransferForm({
                 onDrop={handleDrop}
                 className={`group relative aspect-[4/3] rounded-2xl border-2 border-dashed flex flex-col items-center justify-center transition-all duration-300 p-4 ${
                   isDragging
-                    ? 'border-orange-500 bg-gradient-to-br from-orange-100/20 to-amber-100/20 shadow-lg shadow-orange-400/20' 
-                    : 'border-orange-400/40 bg-gradient-to-br from-white/50 to-white/50 hover:border-orange-400/60 hover:bg-gradient-to-br hover:from-white/60 hover:to-white/60 cursor-pointer hover:shadow-lg hover:shadow-orange-400/10'
+                    ? 'border-blue-500 bg-gradient-to-br from-blue-100/20 to-indigo-100/20 shadow-lg shadow-blue-400/20' 
+                    : 'border-blue-400/40 bg-gradient-to-br from-white/50 to-white/50 hover:border-blue-400/60 hover:bg-gradient-to-br hover:from-white/60 hover:to-white/60 cursor-pointer hover:shadow-lg hover:shadow-blue-400/10'
                 }`}
               >
                 <input
@@ -336,10 +336,10 @@ export default function StyleTransferForm({
                 />
                 <div className="flex flex-col items-center justify-center h-full space-y-2 group-hover:scale-105 transition-transform duration-300">
                   <div className="relative group-hover:animate-pulse">
-                    <svg className="w-6 h-6 text-orange-500/70 group-hover:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-blue-300/70 group-hover:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                     </svg>
-                    <div className="absolute inset-0 bg-gradient-to-r from-orange-100/20 to-amber-100/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-100/20 to-indigo-100/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                   <div className="text-center">
                     <div className="space-y-1">
@@ -351,7 +351,7 @@ export default function StyleTransferForm({
                 </div>
                 {/* 拖拽时的视觉反馈 */}
                 {isDragging && (
-                  <div className="absolute inset-0 bg-gradient-to-br from-orange-100/30 to-amber-100/30 rounded-2xl flex items-center justify-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-100/30 to-indigo-100/30 rounded-2xl flex items-center justify-center">
                     <div className="text-gray-900 font-semibold text-lg">{t('form.upload.dropToUpload')}</div>
                   </div>
                 )}
@@ -374,8 +374,8 @@ export default function StyleTransferForm({
               onClick={() => handleStyleSelect(style.id)}
               className={`group relative aspect-[4/3] rounded-2xl overflow-hidden border-2 cursor-pointer transition-all duration-300 ${
                 selectedStyle === style.id
-                  ? 'border-orange-500 bg-gradient-to-br from-orange-100/20 to-amber-100/20 shadow-lg shadow-orange-400/20'
-                  : 'border-orange-400/40 bg-gradient-to-br from-white/50 to-white/50 hover:border-orange-400/50 hover:bg-gradient-to-br hover:from-white/60 hover:to-white/60'
+                  ? 'border-blue-500 bg-gradient-to-br from-blue-100/20 to-indigo-100/20 shadow-lg shadow-blue-400/20'
+                  : 'border-blue-400/40 bg-gradient-to-br from-white/50 to-white/50 hover:border-blue-400/50 hover:bg-gradient-to-br hover:from-white/60 hover:to-white/60'
               }`}
             >
               <Image
@@ -386,14 +386,14 @@ export default function StyleTransferForm({
               />
               {/* 风格名称 */}
               <div className="absolute bottom-0 left-0 right-0 bg-black/30 backdrop-blur-md p-2">
-                <p className="text-orange-500 font-semibold text-xs text-center">
+                <p className="text-blue-300 font-semibold text-xs text-center">
                   {t(`form.styleTransfer.styles.${style.name}`)}
                 </p>
               </div>
               {/* 选中态指示器 */}
               {selectedStyle === style.id && (
-                <div className="absolute top-2 right-2 w-5 h-5 bg-orange-500 rounded-full flex items-center justify-center">
-                  <svg className="w-3 h-3 text-amber-900" fill="currentColor" viewBox="0 0 20 20">
+                <div className="absolute top-2 right-2 w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
+                  <svg className="w-3 h-3 text-indigo-900" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </div>
@@ -418,13 +418,13 @@ export default function StyleTransferForm({
           {/* 背景渐变 */}
           <div className={`absolute inset-0 transition-all duration-300 ${
             selectedStyle && uploadedImages.length > 0 && !isGenerating
-              ? 'bg-gradient-to-r from-orange-400 to-amber-400'
+              ? 'bg-gradient-to-r from-blue-400 to-indigo-400'
               : 'bg-gray-100/50'
           }`} />
           
           {/* 进度条覆盖层 */}
           {isGenerating && (
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-300 to-amber-300 transition-all duration-300 ease-out"
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-300 to-indigo-300 transition-all duration-300 ease-out"
                  style={{ width: `${progress}%` }} />
           )}
           
@@ -472,7 +472,7 @@ export default function StyleTransferForm({
             </div>
             <div className="w-full h-1.5 bg-gray-100/50 rounded-full overflow-hidden">
               <div
-                className="h-full bg-gradient-to-r from-orange-400 to-amber-400 transition-all duration-300 relative overflow-hidden"
+                className="h-full bg-gradient-to-r from-blue-400 to-indigo-400 transition-all duration-300 relative overflow-hidden"
                 style={{ width: `${progress}%` }}
               >
                 {/* 进度条内的水流效果 */}

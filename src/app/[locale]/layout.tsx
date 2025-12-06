@@ -47,12 +47,12 @@ export async function generateMetadata({params}: { params: Promise<{ locale: str
     title: t('title'),
     description: t('description'),
     openGraph: {
-      title: 'Dreamifly - 免费AI绘画工具 | AI画图网站在线生成',
-      description: 'Dreamifly 是无需注册的AI生图网站，支持动漫、插画、3D风格，提供智能AI绘画服务，让创作更简单。',
+      title: 'FastAiImage - 免费AI绘画工具 | AI画图网站在线生成',
+      description: 'FastAiImage 是无需注册的AI生图网站，支持动漫、插画、3D风格，提供智能AI绘画服务，让创作更简单。',
       url: siteUrl,
       images: [
         {
-          url:  `${siteUrl}/images/dreamifly-logo.jpg`,
+          url:  `${siteUrl}/images/可爱猫猫.png`,
           width: 600,
           height: 600,
           alt: 'Dreamifly Logo',
@@ -63,9 +63,9 @@ export async function generateMetadata({params}: { params: Promise<{ locale: str
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Dreamifly - 免费AI绘画工具 | AI画图网站在线生成',
-      description: 'Dreamifly 是无需注册的AI生图网站，支持动漫、插画、3D风格，提供智能AI绘画服务，让创作更简单。',
-      images: [ `${siteUrl}/images/dreamifly-logo.jpg`],
+      title: 'FastAiImage - 免费AI绘画工具 | AI画图网站在线生成',
+      description: 'FastAiImage 是无需注册的AI生图网站，支持动漫、插画、3D风格，提供智能AI绘画服务，让创作更简单。',
+      images: [ `${siteUrl}/images/可爱猫猫.png`],
     },
   }
 }

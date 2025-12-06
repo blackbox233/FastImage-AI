@@ -57,7 +57,7 @@ export default function AdminSidebar() {
         </button>
         <div className="flex items-center ml-4">
           <Image
-            src="/images/dreamifly-logo.jpg"
+            src="/images/可爱猫猫.png"
             alt="Dreamifly Logo"
             width={32}
             height={32}
@@ -94,7 +94,7 @@ export default function AdminSidebar() {
           >
             <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-amber-400 rounded-2xl blur-xl opacity-50 animate-pulse"></div>
             <Image
-              src="/images/dreamifly-logo.jpg"
+              src="/images/可爱猫猫.png"
               alt="Dreamifly Logo"
               width={48}
               height={48}

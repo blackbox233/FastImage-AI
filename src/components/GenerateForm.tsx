@@ -79,7 +79,7 @@ export default function GenerateForm({
   const getTagStyle = (tag: string) => {
     switch (tag) {
       case 'chineseSupport':
-        return 'bg-gradient-to-r from-orange-600/30 to-amber-600/30 text-amber-900 border-amber-500/40';
+        return 'bg-gradient-to-r from-blue-600/30 to-indigo-600/30 text-indigo-900 border-indigo-500/40';
       case 'fastGeneration':
         return 'bg-gradient-to-r from-green-600/30 to-emerald-600/30 text-emerald-900 border-emerald-500/40';
       case 'realisticStyle':
@@ -273,7 +273,7 @@ export default function GenerateForm({
         <div className="relative">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {uploadedImages.map((image, index) => (
-              <div key={index} className="group relative aspect-[4/3] rounded-2xl overflow-hidden border border-orange-400/40 bg-white/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-orange-400/50">
+              <div key={index} className="group relative aspect-[4/3] rounded-2xl overflow-hidden border border-blue-400/40 bg-white/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-blue-400/50">
                 <Image
                   src={`data:image/jpeg;base64,${image}`}
                   alt={`Uploaded reference ${index + 1}`}
@@ -281,13 +281,13 @@ export default function GenerateForm({
                   className="object-contain"
                 />
                 {/* 图片标记 */}
-                <div className="absolute bottom-3 left-3 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full text-xs font-semibold text-gray-900 border border-orange-400/40 shadow-lg">
+                <div className="absolute bottom-3 left-3 px-3 py-1.5 bg-white/90 backdrop-blur-sm rounded-full text-xs font-semibold text-gray-900 border border-blue-400/40 shadow-lg">
                   Image{index + 1}
                 </div>
                 <button
                   type="button"
                   onClick={() => handleRemoveImage(index)}
-                  className="absolute top-3 right-3 p-2 bg-white/90 backdrop-blur-sm rounded-full text-gray-900 hover:text-red-500 hover:bg-red-100/20 transition-all duration-300 shadow-lg border border-orange-200/50 hover:border-red-500/50 opacity-0 group-hover:opacity-100"
+                  className="absolute top-3 right-3 p-2 bg-white/90 backdrop-blur-sm rounded-full text-gray-900 hover:text-red-500 hover:bg-red-100/20 transition-all duration-300 shadow-lg border border-blue-200/50 hover:border-red-500/50 opacity-0 group-hover:opacity-100"
                   aria-label="Remove image"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -305,9 +305,9 @@ export default function GenerateForm({
               className={`group relative aspect-[4/3] rounded-2xl border-2 border-dashed flex flex-col items-center justify-center transition-all duration-300 p-4 ${
                 canUploadMore 
                   ? (isDragging 
-                      ? 'border-orange-500 bg-gradient-to-br from-orange-100/20 to-amber-100/20 shadow-lg shadow-orange-400/20' 
-                      : 'border-orange-400/40 bg-gradient-to-br from-white/50 to-white/50 hover:border-orange-400/60 hover:bg-gradient-to-br hover:from-white/60 hover:to-white/60 cursor-pointer hover:shadow-lg hover:shadow-orange-400/10')
-                  : 'border-orange-200/30 bg-gradient-to-br from-white/30 to-white/30 cursor-not-allowed opacity-60'
+                      ? 'border-blue-500 bg-gradient-to-br from-blue-100/20 to-indigo-100/20 shadow-lg shadow-blue-400/20' 
+                      : 'border-blue-400/40 bg-gradient-to-br from-white/50 to-white/50 hover:border-blue-400/60 hover:bg-gradient-to-br hover:from-white/60 hover:to-white/60 cursor-pointer hover:shadow-lg hover:shadow-blue-400/10')
+                  : 'border-blue-200/30 bg-gradient-to-br from-white/30 to-white/30 cursor-not-allowed opacity-60'
               }`}
             >
               <input
@@ -320,11 +320,11 @@ export default function GenerateForm({
               />
               <div className={`flex flex-col items-center justify-center h-full space-y-2 ${canUploadMore ? 'group-hover:scale-105 transition-transform duration-300' : ''}`}>
                 <div className={`relative ${canUploadMore ? 'group-hover:animate-pulse' : ''}`}>
-                  <svg className={`w-6 h-6 ${canUploadMore ? 'text-orange-500/70 group-hover:text-orange-400' : 'text-orange-300/50'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className={`w-6 h-6 ${canUploadMore ? 'text-blue-500/70 group-hover:text-blue-400' : 'text-blue-500/50'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                   </svg>
                   {canUploadMore && (
-                    <div className="absolute inset-0 bg-gradient-to-r from-orange-100/20 to-amber-100/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-100/20 to-indigo-100/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   )}
                 </div>
                 <div className="text-center">
@@ -336,10 +336,10 @@ export default function GenerateForm({
                     </div>
                   ) : (
                     <div className="space-y-1">
-                      <p className="text-orange-400/80 font-medium text-sm leading-tight">
+                      <p className="text-blue-400/80 font-medium text-sm leading-tight">
                         {t('form.upload.limitReached')}
                       </p>
-                      <p className="text-orange-500/60 text-xs leading-tight">
+                      <p className="text-blue-500/60 text-xs leading-tight">
                         {t('form.upload.maxImages', { maxImages })}
                       </p>
                     </div>
@@ -348,7 +348,7 @@ export default function GenerateForm({
               </div>
               {/* 拖拽时的视觉反馈 */}
               {isDragging && canUploadMore && (
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-100/30 to-amber-100/30 rounded-2xl flex items-center justify-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-100/30 to-indigo-100/30 rounded-2xl flex items-center justify-center">
                   <div className="text-gray-900 font-semibold text-lg">{t('form.upload.dropToUpload')}</div>
                 </div>
               )}
@@ -595,16 +595,16 @@ export default function GenerateForm({
   }, [generatedImageToSetAsReference, setWidth, setHeight, setUploadedImages]);
 
   return (
-    <div className="relative bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl lg:p-6 p-3 border border-orange-400/40 flex flex-col">
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-100/10 to-amber-100/10 rounded-3xl"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(249,115,22,0.1),rgba(255,255,255,0))] shadow-orange-400/20 rounded-3xl"></div>
+    <div className="relative bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl lg:p-6 p-3 border border-blue-400/40 flex flex-col">
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-100/10 to-indigo-100/10 rounded-3xl"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(59,130,246,0.2),rgba(255,255,255,0))] shadow-blue-400/20 rounded-3xl"></div>
       <form onSubmit={handleSubmit} className="space-y-8 relative flex flex-col">
         <div className="space-y-8">
           {/* 上传图片区域（仅支持图生图模型时显示） */}
           {renderImageUploadSection()}
 
           {/* 模型选择区域 */}
-          <div className="border-t border-orange-400/40 pt-8">
+          <div className="border-t border-blue-400/40 pt-8">
             <div>
               <label htmlFor="model" className="flex items-center text-sm font-medium text-gray-900 mb-3">
                 <img src="/form/models.svg" alt="Model" className="w-5 h-5 mr-2 text-gray-900 [&>path]:fill-current" />
@@ -614,7 +614,7 @@ export default function GenerateForm({
                 <button
                   type="button"
                   onClick={() => setIsModelDropdownOpen(!isModelDropdownOpen)}
-                  className={`w-full bg-white/50 backdrop-blur-sm border border-orange-400/40 rounded-xl px-4 py-3 text-left text-gray-900 focus:ring-2 focus:ring-orange-400/50 focus:border-orange-400/50 shadow-inner transition-all duration-300 flex items-center justify-between ${
+                  className={`w-full bg-white/50 backdrop-blur-sm border border-blue-400/40 rounded-xl px-4 py-3 text-left text-gray-900 focus:ring-2 focus:ring-blue-400/50 focus:border-blue-400/50 shadow-inner transition-all duration-300 flex items-center justify-between ${
                     !filteredModels.find(m => m.id === model)?.isAvailable ? 'opacity-50' : ''
                   }`}
                   disabled={status === 'loading'}
@@ -664,7 +664,7 @@ export default function GenerateForm({
                 </button>
                 
                 {isModelDropdownOpen && (
-                  <div className="absolute z-10 w-96 mt-2 bg-white/95 backdrop-blur-xl rounded-xl border border-orange-400/40 shadow-xl max-h-80 overflow-y-auto custom-scrollbar">
+                  <div className="absolute z-10 w-96 mt-2 bg-white/95 backdrop-blur-xl rounded-xl border border-blue-400/40 shadow-xl max-h-80 overflow-y-auto custom-scrollbar">
                     {modelsLoading ? (
                       <div className="px-4 py-4 text-center text-gray-600">
                         {t('form.model.loading')}
@@ -712,7 +712,7 @@ export default function GenerateForm({
                             <div className="flex items-center gap-2">
                               <div className="text-gray-900 font-medium">{modelOption.name}</div>
                               {modelOption.isRecommended && (
-                                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-gradient-to-r from-orange-600/30 to-red-600/30 text-orange-900 border border-orange-500/40">
+                                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-gradient-to-r from-blue-600/30 to-red-600/30 text-blue-900 border border-blue-500/40">
                                   <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 6 8 6c0 0 .5-.5 2-2.5C10.5.5 11 0 11 0c0 0 .5 0 1.5 1C14 2 16 3.75 17 6c1 0 1.657-.343 1.657-.343A8 8 0 0121 12c0 2.707-1.34 5.106-3.343 6.657z"></path>
                                   </svg>
@@ -764,7 +764,7 @@ export default function GenerateForm({
           </div>
 
           {/* 高级设置区域 */}
-          <div className="border-t border-orange-400/40 pt-8">
+          <div className="border-t border-blue-400/40 pt-8">
             <button
               type="button"
               onClick={() => setIsAdvancedOpen(!isAdvancedOpen)}
@@ -793,7 +793,7 @@ export default function GenerateForm({
                       <img src="/form/steps.svg" alt="Steps" className="w-5 h-5 mr-2 text-gray-900 [&>path]:fill-current" />
                       {t('form.steps.label')}
                     </label>
-                    <div className="relative flex items-center bg-white/50 backdrop-blur-sm border border-amber-400/40 rounded-xl focus-within:ring-2 focus-within:ring-amber-400/50 focus-within:border-amber-400/50 shadow-inner transition-all duration-300">
+                    <div className="relative flex items-center bg-white/50 backdrop-blur-sm border border-indigo-400/40 rounded-xl focus-within:ring-2 focus-within:ring-indigo-400/50 focus-within:border-indigo-400/50 shadow-inner transition-all duration-300">
                       <input
                         type="number"
                         id="steps"
@@ -805,7 +805,7 @@ export default function GenerateForm({
                         disabled={status === 'loading'}
                         ref={stepsRef}
                       />
-                      <div className="flex items-center border-l border-orange-400/30">
+                      <div className="flex items-center border-l border-blue-400/30">
                         <button
                           type="button"
                           onClick={() => setSteps(Math.max(10, steps - 1))}
@@ -841,7 +841,7 @@ export default function GenerateForm({
                         <img src="/form/generation-number.svg" alt="Batch Size" className="w-5 h-5 mr-2 text-gray-900 [&>path]:fill-current" />
                         {t('form.batch_size.label')}
                       </label>
-                      <div className="relative flex items-center bg-white/50 backdrop-blur-sm border border-amber-400/40 rounded-xl focus-within:ring-2 focus-within:ring-amber-400/50 focus-within:border-amber-400/50 shadow-inner transition-all duration-300">
+                      <div className="relative flex items-center bg-white/50 backdrop-blur-sm border border-indigo-400/40 rounded-xl focus-within:ring-2 focus-within:ring-indigo-400/50 focus-within:border-indigo-400/50 shadow-inner transition-all duration-300">
                         <input
                           type="number"
                           id="batch_size"
@@ -853,7 +853,7 @@ export default function GenerateForm({
                           disabled={isGenerating}
                           ref={batchSizeRef}
                         />
-                        <div className="flex items-center border-l border-orange-400/30">
+                        <div className="flex items-center border-l border-blue-400/30">
                           <button
                             type="button"
                             onClick={() => setBatchSize(Math.max(1, batch_size - 1))}
@@ -904,7 +904,7 @@ export default function GenerateForm({
             </div>
             <div className="w-full h-2 bg-white/50 rounded-full overflow-hidden">
               <div
-                className="h-full bg-gradient-to-r from-orange-500 to-amber-500 transition-all duration-300"
+                className="h-full bg-gradient-to-r from-blue-500 to-indigo-500 transition-all duration-300"
                 style={{ width: `${progress}%` }}
               />
             </div>

@@ -56,7 +56,7 @@ export default function SiteStats() {
   return (
     <div className="relative p-4 md:p-12 rounded-3xl shadow-2xl border border-orange-400/30 max-w-7xl mx-auto overflow-hidden">
       {/* 背景图片层 */}
-      <div 
+      <div
         className="absolute inset-0 z-0"
         style={{
           backgroundImage: 'url(/images/demo-6.png)',
@@ -66,9 +66,9 @@ export default function SiteStats() {
           transform: 'scale(1.1)',
         }}
       />
-      
+
       {/* 磨砂玻璃效果层 */}
-      <div 
+      <div
         className="absolute inset-0 z-0 bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm"
       />
 
@@ -77,9 +77,9 @@ export default function SiteStats() {
         {/* Mobile: Only show QR code */}
         <div className="md:hidden flex flex-col items-center space-y-4 py-4">
           <div className="w-40 h-[256px] rounded-2xl overflow-hidden border-2 border-orange-400/30 shadow-lg">
-            <img 
-              src="/common/qrcode_qq.jpg" 
-              alt="QR Code" 
+            <img
+              src="/common/qrcode_qq.jpg"
+              alt="QR Code"
               className="w-full h-full object-cover transform scale-[1.4]"
             />
           </div>
@@ -96,7 +96,7 @@ export default function SiteStats() {
               </div>
               <p className="text-orange-100/90 text-lg md:text-xl pl-8 drop-shadow-[0_0_8px_rgba(251,146,60,0.3)]">{t('intro.suffix')}</p>
             </div>
-            
+
             <div className="space-y-3 pl-6">
               <p className="text-orange-100/90 text-base md:text-lg drop-shadow-[0_0_8px_rgba(251,146,60,0.3)]">{t('intro.continuous')}</p>
               <div className="flex items-baseline gap-2">
@@ -128,9 +128,9 @@ export default function SiteStats() {
           {/* 中间 QR Code 部分 */}
           <div className="flex flex-col items-center justify-center space-y-6 py-8">
             <div className="w-56 h-[358.4px] rounded-2xl overflow-hidden border-2 border-orange-400/30 shadow-lg">
-              <img 
-                src="/common/qrcode_qq.jpg" 
-                alt="QR Code" 
+              <img
+                src="/common/qrcode_qq.jpg"
+                alt="QR Code"
                 className="w-full h-full object-cover transform scale-[1.4]"
               />
             </div>
@@ -165,7 +165,7 @@ export default function SiteStats() {
                   {t('message.together')}
                 </p>
               </div>
-              
+
               <div className="space-y-6 pl-8">
                 <p className="bg-gradient-to-r from-orange-300 to-amber-400 bg-clip-text text-transparent text-3xl md:text-4xl font-bold leading-relaxed drop-shadow-[0_0_20px_rgba(251,146,60,0.6)]">
                   {t('message.explore')}
@@ -175,7 +175,7 @@ export default function SiteStats() {
                 </p>
               </div>
             </div>
-            
+
             {/* 将绘画板图标移到右下角，调整位置和大小 */}
             <div className="absolute bottom-0 right-0 transform translate-x-4 translate-y-4">
               <span className="text-4xl md:text-5xl block transform rotate-12 opacity-90">🎨</span>

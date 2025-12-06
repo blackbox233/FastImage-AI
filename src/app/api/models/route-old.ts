@@ -1,4 +1,4 @@
-// 模型配置管理工具
+import { NextResponse } from 'next/server'
 
 // 模型环境变量映射
 const MODEL_ENV_MAP = {
@@ -15,7 +15,7 @@ const MODEL_ENV_MAP = {
 } as const;
 
 // 基础模型配置
-export interface ModelConfig {
+interface ModelConfig {
   id: string;
   name: string;
   image: string;
@@ -24,13 +24,10 @@ export interface ModelConfig {
   maxImages: number;
   tags?: string[];
   isRecommended?: boolean;
-  isAvailable?: boolean; // 动态添加的属性，表示模型是否可用
-  // ✅ 新增：用于存储 SD-WebUI 需要的完整检查点文件名
-  sdWebuiFilename?: string;
 }
 
 // 完整的模型配置列表
-export const ALL_MODELS: ModelConfig[] = [
+const ALL_MODELS: ModelConfig[] = [
   {
     id: "Wai-SDXL-V150",
     name: "Wai-SDXL-V150",
@@ -131,76 +128,40 @@ export const ALL_MODELS: ModelConfig[] = [
 
 /**
  * 检查模型是否在环境变量中配置了URL
- * @param modelId 模型ID
- * @returns 是否配置了URL
  */
-export function isModelConfigured(modelId: string): boolean {
+function isModelConfigured(modelId: string): boolean {
   const envVarName = MODEL_ENV_MAP[modelId as keyof typeof MODEL_ENV_MAP];
   if (!envVarName) {
     return false;
   }
   
-  // 在客户端环境中，我们无法直接访问 process.env
-  // 所以我们需要通过其他方式来判断，比如API调用
-  // 这里先返回 true，实际实现需要在服务端检查
-  return true;
+  const envValue = process.env[envVarName];
+  return Boolean(envValue && envValue.trim() !== '');
 }
 
 /**
- * 从API获取可用的模型列表（基于环境变量配置）
- * @returns Promise<ModelConfig[]> 可用的模型配置列表
+ * 获取可用的模型列表（基于环境变量配置）
  */
-export async function getAvailableModels(): Promise<ModelConfig[]> {
-  try {
-    const response = await fetch('/api/models');
-    if (!response.ok) {
-      throw new Error('Failed to fetch available models');
-    }
-    
-    const data = await response.json();
-    return data.models || [];
-  } catch (error) {
-    console.error('Error fetching available models:', error);
-    // 如果API调用失败，返回所有模型作为后备
-    return ALL_MODELS;
-  }
-}
-
-/**
- * 获取本地模型列表（不检查环境变量）
- * @returns 所有模型配置列表
- */
-export function getAllModels(): ModelConfig[] {
-  return ALL_MODELS;
-}
-
-/**
- * 根据上传的图片数量过滤可用模型
- * @param uploadedImagesCount 已上传的图片数量
- * @param models 模型列表
- * @returns 过滤后的模型列表（包含 isAvailable 属性）
- */
-export function filterModelsByImageCount(
-  uploadedImagesCount: number, 
-  models: ModelConfig[]
-): (ModelConfig & { isAvailable: boolean })[] {
-  return models.map(model => ({
-    ...model,
-    isAvailable: uploadedImagesCount > 0 ? 
-      (model.use_i2i && uploadedImagesCount <= model.maxImages) : 
-      model.use_t2i
-  })).sort((a, b) => {
-    // 可用的模型排在前面
-    if (a.isAvailable && !b.isAvailable) return -1;
-    if (!a.isAvailable && b.isAvailable) return 1;
-    return 0;
+function getAvailableModels(): ModelConfig[] {
+  return ALL_MODELS.filter(model => {
+    // 检查是否配置了环境变量
+    return isModelConfigured(model.id);
   });
 }
 
-
-export function getModelNameById(modelId: string): string {
-  // 假设 ALL_MODELS 包含了硬编码的默认模型列表
-  // 这里需要确保能找到 'Z-Image-Turbo' 等默认模型的名称。
-  const modelConfig = ALL_MODELS.find(m => m.id === modelId);
-  return modelConfig?.name || modelId;
+export async function GET() {
+  try {
+    const availableModels = getAvailableModels();
+    
+    return NextResponse.json({
+      models: availableModels,
+      total: availableModels.length
+    });
+  } catch (error) {
+    console.error('Error fetching available models:', error);
+    return NextResponse.json(
+      { error: 'Failed to fetch available models' },
+      { status: 500 }
+    );
+  }
 }

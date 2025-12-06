@@ -8,6 +8,8 @@ import PromptInput from './PromptInput'
 import { optimizePrompt } from '../utils/promptOptimizer'
 import { useSession } from '@/lib/auth-client'
 import { generateDynamicTokenWithServerTime } from '@/utils/dynamicToken'
+import { getAvailableModels, ModelConfig } from '@/utils/modelConfig';
+
 
 interface GenerateSectionProps {
   communityWorks: { prompt: string }[];
@@ -66,6 +68,37 @@ const GenerateSection = ({ communityWorks, initialPrompt }: GenerateSectionProps
   useEffect(() => {
     setPrompt(initialPrompt || '');
   }, [initialPrompt]);
+
+  // 【新增】模型默认选择逻辑
+  useEffect(() => {
+    // 异步加载模型列表并设置默认选择
+    const loadAndSetDefaultModel = async () => {
+      try {
+        // 调用 getAvailableModels (它会调用 /api/models)
+        const models: ModelConfig[] = await getAvailableModels();
+
+        if (models.length > 0) {
+          // 查找被推荐的模型，如果没有则使用列表中的第一个模型
+          const defaultModel = models.find(m => m.isRecommended) || models[0];
+
+          // 仅当当前模型ID与目标默认ID不同时才设置
+          // 这将把硬编码的 'Z-Image-Turbo' 覆盖为 'sd-webui-0' 或其他推荐模型
+          if (model !== defaultModel.id) {
+            setModel(defaultModel.id);
+          }
+        }
+      } catch (error) {
+        console.error('Failed to set default model from API, retaining default:', error);
+      }
+    };
+
+    // 仅在初始加载时，且模型ID仍然是硬编码值时执行一次，确保设置默认值
+    if (model === 'Z-Image-Turbo') {
+      loadAndSetDefaultModel();
+    }
+
+  }, [model]); // 依赖于 model 状态，确保在模型状态为初始值时尝试加载
+
 
   // 处理设置生成的图片为参考图片
   const handleSetGeneratedImageAsReference = async (imageUrl: string) => {
@@ -516,9 +549,9 @@ const GenerateSection = ({ communityWorks, initialPrompt }: GenerateSectionProps
         {/* Prompt Input Section - Only show for generate tab */}
         {activeTab === 'generate' && (
           <div className="mb-7 animate-fadeInUp z-[20] relative">
-            <div className="relative bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl lg:p-5 p-3 border border-orange-400/40">
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-100/10 to-amber-100/10 rounded-3xl"></div>
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(249,115,22,0.1),rgba(255,255,255,0))] shadow-orange-400/20"></div>
+            <div className="relative bg-white/95 backdrop-blur-xl rounded-3xl shadow-2xl lg:p-5 p-3 border border-blue-400/40">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-100/10 to-indigo-100/10 rounded-3xl"></div>
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(59,130,246,0.1),rgba(255,255,255,0))] shadow-blue-400/20"></div>
               
               <div className="relative">
                 <PromptInput
@@ -644,8 +677,8 @@ const GenerateSection = ({ communityWorks, initialPrompt }: GenerateSectionProps
                 </p>
               </div>
             ) : (
-              <div className="bg-amber-50 border-l-4 border-amber-500 p-3 mb-6 rounded">
-                <p className="text-sm text-amber-800">
+              <div className="bg-indigo-50 border-l-4 border-indigo-500 p-3 mb-6 rounded">
+                <p className="text-sm text-indigo-800">
                   💡 提示：请等待其他标签页的生图任务完成后再试
                 </p>
               </div>
@@ -654,7 +687,7 @@ const GenerateSection = ({ communityWorks, initialPrompt }: GenerateSectionProps
             {/* 关闭按钮 */}
             <button
               onClick={() => setShowErrorModal(false)}
-              className="w-full px-6 py-3 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold rounded-xl hover:from-orange-600 hover:to-amber-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-indigo-600 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               我知道了
             </button>
@@ -671,7 +704,7 @@ const GenerateSection = ({ communityWorks, initialPrompt }: GenerateSectionProps
           {/* 顶部控制栏 */}
           <div className="w-full max-w-[1400px] flex justify-end mb-4">
             <button
-              className="p-2 text-orange-300 hover:text-orange-100 transition-colors hover:scale-110 transform duration-300 bg-orange-800/50 rounded-full hover:bg-orange-700/50"
+              className="p-2 text-blue-500 hover:text-blue-100 transition-colors hover:scale-110 transform duration-300 bg-blue-800/50 rounded-full hover:bg-blue-700/50"
               onClick={(e) => {
                 e.stopPropagation();
                 setZoomedImage(null);
@@ -690,14 +723,14 @@ const GenerateSection = ({ communityWorks, initialPrompt }: GenerateSectionProps
               <img
                 src={zoomedImage}
                 alt="Zoomed preview"
-                className="max-w-full max-h-[calc(100vh-8rem)] w-auto h-auto object-contain rounded-lg shadow-2xl border border-orange-400/30 animate-scaleIn"
+                className="max-w-full max-h-[calc(100vh-8rem)] w-auto h-auto object-contain rounded-lg shadow-2xl border border-blue-400/30 animate-scaleIn"
                 onClick={(e) => e.stopPropagation()}
               />
             </div>
           </div>
 
           {/* 底部提示 */}
-          <div className="w-full max-w-[1400px] mt-4 text-center text-sm text-orange-200/60">
+          <div className="w-full max-w-[1400px] mt-4 text-center text-sm text-blue-200/60">
             <p>{tHome('preview.closeHint')}</p>
           </div>
         </div>

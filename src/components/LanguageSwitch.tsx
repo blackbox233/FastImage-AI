@@ -31,7 +31,7 @@ export default function LanguageSwitch() {
     <div className="relative group">
       <button className="flex items-center justify-center w-12 h-12 rounded-2xl bg-gray-200/50 hover:bg-gray-300/50 transition-all duration-300">
         <div className="relative w-6 h-6 flex items-center justify-center">
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full blur-sm opacity-50"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-full blur-sm opacity-50"></div>
           <div 
             className="relative z-10 w-6 h-6 bg-[url('/globe.svg')] bg-no-repeat bg-center bg-contain filter brightness-0 opacity-70 group-hover:opacity-100"
             style={{ 
@@ -49,7 +49,7 @@ export default function LanguageSwitch() {
               key={locale}
               onClick={() => switchLanguage(locale)}
               className={`flex items-center w-full px-4 py-3 text-sm hover:bg-gray-100/50 transition-colors ${
-                currentLocale === locale ? 'text-orange-500 font-medium' : 'text-gray-900'
+                currentLocale === locale ? 'text-blue-500 font-medium' : 'text-gray-900'
               }`}
             >
               <span className="flex-1">{getLanguageName(locale)}</span>

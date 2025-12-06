@@ -10,9 +10,9 @@ const TabNavigation = ({ activeTab, onTabChange }: TabNavigationProps) => {
 
   return (
     <div className="mb-7 animate-fadeInUp">
-      <div className="relative bg-gradient-to-br from-white/95 to-gray-50/95 backdrop-blur-md rounded-3xl shadow-2xl p-2 lg:p-5 border border-orange-400/30">
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-400/10 to-amber-400/10 rounded-3xl"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(251,146,60,0.2),rgba(255,255,255,0))]"></div>
+      <div className="relative bg-gradient-to-br from-white/95 to-gray-50/95 backdrop-blur-md rounded-3xl shadow-2xl p-2 lg:p-5 border border-blue-400/30">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-indigo-400/10 rounded-3xl"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(59,130,246,0.2),rgba(255,255,255,0))]"></div>
         
         <div className="relative">
           {/* Tab Buttons */}

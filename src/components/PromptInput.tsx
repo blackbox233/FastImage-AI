@@ -77,7 +77,7 @@ const PromptInput = ({
           id="prompt"
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
-          className="w-full h-28 px-4 py-3 bg-white/95 backdrop-blur-sm border border-amber-400/40 rounded-2xl focus:ring-2 focus:ring-amber-400/50 focus:border-amber-400/50 resize-none shadow-inner transition-all duration-300 text-gray-900 placeholder-gray-500 text-sm [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          className="w-full h-28 px-4 py-3 bg-white/95 backdrop-blur-sm border border-indigo-400/40 rounded-2xl focus:ring-2 focus:ring-indigo-400/50 focus:border-indigo-400/50 resize-none shadow-inner transition-all duration-300 text-gray-900 placeholder-gray-500 text-sm [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
           placeholder={t('form.prompt.placeholder')}
           ref={promptRef}
         />
@@ -92,8 +92,8 @@ const PromptInput = ({
             type="button"
             id="negative-prompt-toggle"
             onClick={() => setIsNegativePromptEnabled(!isNegativePromptEnabled)}
-            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-amber-400/50 focus:ring-offset-2 ${
-              isNegativePromptEnabled ? 'bg-amber-400' : 'bg-gray-200'
+            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-400/50 focus:ring-offset-2 ${
+              isNegativePromptEnabled ? 'bg-indigo-400' : 'bg-gray-200'
             }`}
             disabled={isGenerating}
           >
@@ -123,10 +123,10 @@ const PromptInput = ({
             <button
               type="button"
               onClick={onRandomPrompt}
-              className="px-2 py-1 text-xs md:px-3 md:py-2 md:text-sm rounded-xl bg-white/95 border border-amber-400/40 text-gray-900 hover:bg-amber-50/50 hover:border-amber-400/50 transition-all duration-300 shadow-md shadow-amber-400/10 hover:shadow-lg hover:shadow-amber-400/20 whitespace-nowrap flex items-center"
+              className="px-2 py-1 text-xs md:px-3 md:py-2 md:text-sm rounded-xl bg-white/95 border border-indigo-400/40 text-gray-900 hover:bg-indigo-50/50 hover:border-indigo-400/50 transition-all duration-300 shadow-md shadow-indigo-400/10 hover:shadow-lg hover:shadow-indigo-400/20 whitespace-nowrap flex items-center"
               disabled={isGenerating}
             >
-              <svg className="w-3 h-3 mr-1 md:w-4 md:h-4 text-orange-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-3 h-3 mr-1 md:w-4 md:h-4 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
               </svg>
               {t('form.randomPrompt')}
@@ -134,15 +134,15 @@ const PromptInput = ({
             <button
               type="button"
               onClick={() => setIsStyleOpen(!isStyleOpen)}
-              className="px-3 py-1 text-xs md:px-4 md:py-2 md:text-sm rounded-xl bg-white/95 border border-amber-400/40 text-gray-900 hover:bg-amber-50/50 hover:border-amber-400/50 transition-all duration-300 shadow-md shadow-amber-400/10 hover:shadow-lg hover:shadow-amber-400/20 whitespace-nowrap flex items-center relative"
+              className="px-3 py-1 text-xs md:px-4 md:py-2 md:text-sm rounded-xl bg-white/95 border border-indigo-400/40 text-gray-900 hover:bg-indigo-50/50 hover:border-indigo-400/50 transition-all duration-300 shadow-md shadow-indigo-400/10 hover:shadow-lg hover:shadow-indigo-400/20 whitespace-nowrap flex items-center relative"
               disabled={isGenerating}
             >
-              <svg className="w-3 h-3 mr-1 md:w-4 md:h-4 text-amber-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-3 h-3 mr-1 md:w-4 md:h-4 text-indigo-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
               </svg>
               {selectedStyle || t('form.styleButton')}
               {isStyleOpen && (
-                <div ref={styleDropdownRef} className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white/95 border border-amber-400/40 rounded-xl shadow-xl p-4 grid grid-cols-3 gap-x-2 gap-y-4 min-w-[450px] z-50 justify-items-center">
+                <div ref={styleDropdownRef} className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white/95 border border-indigo-400/40 rounded-xl shadow-xl p-4 grid grid-cols-3 gap-x-2 gap-y-4 min-w-[450px] z-50 justify-items-center">
                   {styleOptions.map(style => (
                     <div
                       key={style.id}
@@ -163,17 +163,17 @@ const PromptInput = ({
             </button>
             <div
               onClick={() => setIsRatioOpen(!isRatioOpen)}
-              className="px-3 py-1 text-xs md:px-4 md:py-2 md:text-sm rounded-xl bg-white/95 border border-amber-400/40 text-gray-900 hover:bg-amber-50/50 hover:border-amber-400/50 transition-all duration-300 shadow-md shadow-amber-400/10 hover:shadow-lg hover:shadow-amber-400/20 whitespace-nowrap flex items-center relative cursor-pointer"
+              className="px-3 py-1 text-xs md:px-4 md:py-2 md:text-sm rounded-xl bg-white/95 border border-indigo-400/40 text-gray-900 hover:bg-indigo-50/50 hover:border-indigo-400/50 transition-all duration-300 shadow-md shadow-indigo-400/10 hover:shadow-lg hover:shadow-indigo-400/20 whitespace-nowrap flex items-center relative cursor-pointer"
               tabIndex={0}
               role="button"
               aria-disabled={isGenerating}
             >
-              <svg className="w-3 h-3 mr-1 md:w-4 md:h-4 text-orange-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-3 h-3 mr-1 md:w-4 md:h-4 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"></path>
               </svg>
               {aspectRatio}
               {isRatioOpen && (
-                <div ref={ratioDropdownRef} className="absolute top-full left-0 mt-2 bg-white/95 border border-amber-400/40 rounded-xl shadow-xl p-2 min-w-[150px]">
+                <div ref={ratioDropdownRef} className="absolute top-full left-0 mt-2 bg-white/95 border border-indigo-400/40 rounded-xl shadow-xl p-2 min-w-[150px]">
                   {ratios.map(r => {
                     const [rw, rh] = r.split(':').map(Number);
                     const isHorizontal = rw >= rh;
@@ -186,7 +186,7 @@ const PromptInput = ({
                         onClick={() => { onRatioChange(r); setIsRatioOpen(false); }}
                         className="flex items-center px-3 py-2 text-sm text-gray-900 hover:bg-gray-100/50 w-full rounded-lg cursor-pointer"
                       >
-                        <div className="bg-amber-400/40 mr-2" style={rectStyle}></div>
+                        <div className="bg-indigo-400/40 mr-2" style={rectStyle}></div>
                         {r}
                       </div>
                     );
@@ -197,10 +197,10 @@ const PromptInput = ({
             <button
               type="button"
               onClick={onOptimizePrompt}
-              className="px-2 py-1 text-xs md:px-3 md:py-2 md:text-sm rounded-xl bg-white/95 border border-amber-400/40 text-gray-900 hover:bg-amber-50/50 hover:border-amber-400/50 transition-all duration-300 shadow-md shadow-amber-400/10 hover:shadow-lg hover:shadow-amber-400/20 whitespace-nowrap flex items-center"
+              className="px-2 py-1 text-xs md:px-3 md:py-2 md:text-sm rounded-xl bg-white/95 border border-indigo-400/40 text-gray-900 hover:bg-indigo-50/50 hover:border-indigo-400/50 transition-all duration-300 shadow-md shadow-indigo-400/10 hover:shadow-lg hover:shadow-indigo-400/20 whitespace-nowrap flex items-center"
               disabled={isGenerating || isOptimizing || !prompt.trim()}
             >
-              <svg className="w-3 h-3 mr-1 md:w-4 md:h-4 text-amber-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-3 h-3 mr-1 md:w-4 md:h-4 text-indigo-900" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
               </svg>
               {isOptimizing ? t('form.optimizingPrompt') || 'Optimizing...' : t('form.optimizePrompt')}
@@ -210,20 +210,20 @@ const PromptInput = ({
             type="button"
             onClick={onGenerate}
             disabled={isGenerating || isOptimizing}
-            className="w-full md:w-[200px] px-4 py-2 text-sm md:px-6 md:py-3 md:text-base font-semibold rounded-2xl bg-white/95 text-gray-900 hover:bg-amber-50/95 transition-all duration-500 shadow-xl shadow-amber-400/20 hover:shadow-2xl hover:shadow-amber-400/30 hover:-translate-y-0.5 transform border border-amber-400/40 relative overflow-hidden group"
+            className="w-full md:w-[200px] px-4 py-2 text-sm md:px-6 md:py-3 md:text-base font-semibold rounded-2xl bg-white/95 text-gray-900 hover:bg-indigo-50/95 transition-all duration-500 shadow-xl shadow-indigo-400/20 hover:shadow-2xl hover:shadow-indigo-400/30 hover:-translate-y-0.5 transform border border-indigo-400/40 relative overflow-hidden group"
           >
             {/* 高级光效背景 */}
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000 ease-out"></div>
             
             {/* 微妙的发光效果 */}
-            <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 via-transparent to-orange-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-400/20 via-transparent to-blue-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             
             <span className="relative z-10 flex items-center justify-center font-bold">
               {isGenerating ? (
                 isQueuing ? (
                   <>
                     {/* 排队中 - 黄色时钟图标 */}
-                    <svg className="animate-spin -ml-1 mr-1.5 h-4 w-4 md:mr-2 md:h-5 md:w-5 text-amber-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <svg className="animate-spin -ml-1 mr-1.5 h-4 w-4 md:mr-2 md:h-5 md:w-5 text-indigo-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3"></circle>
                       <path className="opacity-75" fill="currentColor" d="M12 6v6l4 2"></path>
                       <path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -250,7 +250,7 @@ const PromptInput = ({
                 </>
               ) : (
                 <>
-                  <svg className="mr-1.5 h-4 w-4 md:mr-2 md:h-5 md:w-5 text-orange-500" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                  <svg className="mr-1.5 h-4 w-4 md:mr-2 md:h-5 md:w-5 text-blue-500" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
                     <path fill="currentColor" d="M640 224A138.666667 138.666667 0 0 0 778.666667 85.333333h64A138.666667 138.666667 0 0 0 981.333333 224v64A138.666667 138.666667 0 0 0 842.666667 426.666667h-64A138.666667 138.666667 0 0 0 640 288v-64zM170.666667 298.666667a85.333333 85.333333 0 0 1 85.333333-85.333334h298.666667V128H256a170.666667 170.666667 0 0 0-170.666667 170.666667v426.666666a170.666667 170.666667 0 0 0 170.666667 170.666667h512a170.666667 170.666667 0 0 0 170.666667-170.666667v-213.333333h-85.333334v213.333333a85.333333 85.333333 0 0 1-85.333333 85.333334H256a85.333333 85.333333 0 0 1-85.333333-85.333334V298.666667z"></path>
                   </svg>
                   {t('form.generateButton.default')}

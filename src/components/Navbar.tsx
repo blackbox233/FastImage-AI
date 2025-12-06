@@ -129,7 +129,7 @@ export default function Navbar() {
   return (
     <>
       {/* 移动端顶部导航栏 */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 h-16 bg-gray-100/80 backdrop-blur-md border-b border-orange-400/20 z-40 flex items-center px-4">
+      <div className="lg:hidden fixed top-0 left-0 right-0 h-16 bg-gray-100/80 backdrop-blur-md border-b border-blue-400/20 z-40 flex items-center px-4">
         <button
           onClick={handleMenuClick}
           className="p-2 text-gray-700 hover:text-gray-900 transition-colors"
@@ -141,13 +141,13 @@ export default function Navbar() {
         </button>
         <div className="flex items-center ml-4 cursor-pointer" onClick={() => handleLogoClick()}>
           <Image
-            src="/images/dreamifly-logo.jpg"
+            src="/images/可爱猫猫.png"
             alt="Dreamifly Logo"
             width={32}
             height={32}
-            className="rounded-xl shadow-lg border border-orange-400/30"
+            className="rounded-xl shadow-lg border border-blue-400/30"
           />
-          <span className="ml-2 text-lg font-bold bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
+          <span className="ml-2 text-lg font-bold bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
             {t('siteName')}
           </span>
         </div>
@@ -158,12 +158,12 @@ export default function Navbar() {
             <>
               {/* 积分显示 */}
               {pointsBalance !== null && (
-                <div className="flex items-center gap-1.5 px-2.5 py-1.5 bg-gradient-to-r from-orange-400/10 to-amber-400/10 rounded-lg border border-orange-400/20">
-                  <svg className="w-4 h-4 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                <div className="flex items-center gap-1.5 px-2.5 py-1.5 bg-gradient-to-r from-blue-400/10 to-indigo-400/10 rounded-lg border border-blue-400/20">
+                  <svg className="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z" />
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-sm font-semibold text-orange-700">{pointsBalance}</span>
+                  <span className="text-sm font-semibold text-blue-700">{pointsBalance}</span>
                 </div>
               )}
               <div className="relative">
@@ -175,7 +175,7 @@ export default function Navbar() {
                     avatar={globalAvatar}
                     avatarFrameId={avatarFrameId}
                     size={32}
-                    className="border-2 border-orange-400/30"
+                    className="border-2 border-blue-400/30"
                   />
                 </button>
                 {showUserMenu && (
@@ -200,7 +200,7 @@ export default function Navbar() {
           ) : (
             <button
               onClick={() => setShowAuthModal(true)}
-              className="px-3 py-1.5 text-sm bg-gradient-to-r from-orange-400 to-amber-400 text-white font-semibold rounded-lg hover:from-orange-500 hover:to-amber-500 transition-all"
+              className="px-3 py-1.5 text-sm bg-gradient-to-r from-blue-400 to-indigo-400 text-white font-semibold rounded-lg hover:from-blue-500 hover:to-indigo-500 transition-all"
             >
               {tAuth('login')}
             </button>
@@ -219,7 +219,7 @@ export default function Navbar() {
       {/* 侧边导航栏 */}
       <div 
         id="main-nav"
-        className={`fixed left-0 top-0 bottom-0 w-48 bg-gray-100/80 backdrop-blur-md border-r border-orange-400/20 z-50 transition-transform duration-300
+        className={`fixed left-0 top-0 bottom-0 w-48 bg-gray-100/80 backdrop-blur-md border-r border-blue-400/20 z-50 transition-transform duration-300
           ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
           ${isMobileMenuOpen ? 'shadow-2xl' : ''}
         `}
@@ -232,16 +232,16 @@ export default function Navbar() {
               onClick={handleLogoClick}
               className="relative transform transition-all duration-300 hover:scale-110 mb-3"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-400 to-amber-400 rounded-2xl blur-xl opacity-50 animate-pulse"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-2xl blur-xl opacity-50 animate-pulse"></div>
               <Image
-                src="/images/dreamifly-logo.jpg"
+                src="/images/可爱猫猫.png"
                 alt="Dreamifly Logo"
                 width={48}
                 height={48}
-                className="rounded-2xl shadow-xl border border-orange-400/30 relative z-10"
+                className="rounded-2xl shadow-xl border border-blue-400/30 relative z-10"
               />
             </Link>
-            <span className="text-lg font-bold bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent">
+            <span className="text-lg font-bold bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
               {t('siteName')}
             </span>
           </div>
@@ -259,16 +259,16 @@ export default function Navbar() {
             </button>
 
             {/* 工作流菜单 - 所有用户可见 */}
-            <Link
-              href={transferUrl('/workflows', locale)}
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="group w-full flex items-center gap-3 p-3 rounded-2xl bg-gray-200/50 hover:bg-gray-300/50 transition-all duration-300"
-            >
-              <svg className="w-6 h-6 text-gray-700 group-hover:text-gray-900 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7h16M4 12h10m-6 5h6" />
-              </svg>
-              <span className="text-sm text-gray-900 group-hover:text-gray-800">{t('workflows')}</span>
-            </Link>
+            {/*<Link*/}
+            {/*  href={transferUrl('/workflows', locale)}*/}
+            {/*  onClick={() => setIsMobileMenuOpen(false)}*/}
+            {/*  className="group w-full flex items-center gap-3 p-3 rounded-2xl bg-gray-200/50 hover:bg-gray-300/50 transition-all duration-300"*/}
+            {/*>*/}
+            {/*  <svg className="w-6 h-6 text-gray-700 group-hover:text-gray-900 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">*/}
+            {/*    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7h16M4 12h10m-6 5h6" />*/}
+            {/*  </svg>*/}
+            {/*  <span className="text-sm text-gray-900 group-hover:text-gray-800">{t('workflows')}</span>*/}
+            {/*</Link>*/}
 
             <button
               onClick={() => handleNavItemClick('community-showcase')}
@@ -297,12 +297,12 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="group w-full flex items-center gap-3 p-3 rounded-2xl bg-gradient-to-r from-orange-400/20 to-amber-400/20 hover:from-orange-400/30 hover:to-amber-400/30 border border-orange-400/40 transition-all duration-300"
+                className="group w-full flex items-center gap-3 p-3 rounded-2xl bg-gradient-to-r from-blue-400/20 to-indigo-400/20 hover:from-blue-400/30 hover:to-indigo-400/30 border border-blue-400/40 transition-all duration-300"
               >
-                <svg className="w-6 h-6 text-orange-600 group-hover:text-orange-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6 text-blue-600 group-hover:text-blue-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
-                <span className="text-sm font-medium text-orange-700 group-hover:text-orange-800">后台管理</span>
+                <span className="text-sm font-medium text-blue-700 group-hover:text-blue-800">后台管理</span>
               </Link>
             )}
           </nav>
@@ -322,7 +322,7 @@ export default function Navbar() {
                         avatar={globalAvatar}
                         avatarFrameId={avatarFrameId}
                         size={40}
-                        className="border-2 border-orange-400/30 flex-shrink-0"
+                        className="border-2 border-blue-400/30 flex-shrink-0"
                       />
                       <div className="flex-1 text-left overflow-hidden">
                         <p className="text-sm font-medium text-gray-900 truncate">
@@ -359,12 +359,12 @@ export default function Navbar() {
                 </div>
                 {/* 积分显示（右侧，仅登录用户显示） */}
                 {session?.user && pointsBalance !== null && (
-                  <div className="flex items-center gap-1.5 px-3 py-2 bg-gradient-to-r from-orange-400/10 to-amber-400/10 rounded-lg border border-orange-400/20">
-                    <svg className="w-4 h-4 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="flex items-center gap-1.5 px-3 py-2 bg-gradient-to-r from-blue-400/10 to-indigo-400/10 rounded-lg border border-blue-400/20">
+                    <svg className="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z" />
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-sm font-semibold text-orange-700">{pointsBalance}</span>
+                    <span className="text-sm font-semibold text-blue-700">{pointsBalance}</span>
                   </div>
                 )}
               </div>
@@ -373,7 +373,7 @@ export default function Navbar() {
               {!session?.user && (
                 <button
                   onClick={() => setShowAuthModal(true)}
-                  className="w-full bg-gradient-to-r from-orange-400 to-amber-400 text-white font-semibold py-2.5 rounded-xl hover:from-orange-500 hover:to-amber-500 transition-all"
+                  className="w-full bg-gradient-to-r from-blue-400 to-indigo-400 text-white font-semibold py-2.5 rounded-xl hover:from-blue-500 hover:to-indigo-500 transition-all"
                 >
                   {tAuth('login')}
                 </button>

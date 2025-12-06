@@ -1,7 +1,7 @@
 {
   "site": {
-    "title": "Dreamifly - 免費AI繪畫線上生成工具 | 一鍵生成動漫、插畫、藝術圖",
-    "description": "Dreamifly 是一款免費AI繪畫網站，無需註冊，支援動漫、插畫、3D藝術等風格。用戶可通過文字或參考圖快速生成高質量圖像，作為先進AI生圖工具，提供流暢智能創作體驗。適合設計師與繪畫愛好者，輕鬆AI作圖，可隨時利用AI生成圖片"
+    "title": "FastImage AI - 免費AI繪畫線上生成工具 | 一鍵生成動漫、插畫、藝術圖",
+    "description": "FastImage AI 是一款免費AI繪畫網站，無需註冊，支援動漫、插畫、3D藝術等風格。用戶可通過文字或參考圖快速生成高質量圖像，作為先進AI生圖工具，提供流暢智能創作體驗。適合設計師與繪畫愛好者，輕鬆AI作圖，可隨時利用AI生成圖片"
   },
   "home": {
     "hero": {
@@ -12,7 +12,7 @@
         "highlight": "免費無限制",
         "suffix": "提供分散式算力支援。"
       },
-      "description": "Dreamifly - 免費AI繪畫線上生成工具 | 一鍵生成動漫、插畫、藝術圖",
+      "description": "FastImage AI - 免費AI繪畫線上生成工具 | 一鍵生成動漫、插畫、藝術圖",
       "startButton": "開始創作",
       "faqButton": "常見問題",
       "imageCaption": "AI藝術",
@@ -209,27 +209,27 @@
       "title": "常見問題",
       "questions": [
         {
-          "q": "什麼是Dreamifly？",
-          "a": "Dreamifly是一個完全免費、基於多種AI繪畫模型的線上文生圖（text to image）、圖生圖（image to image）服務網站，優秀的AI設計繪圖工具，支援現實、動漫、插畫、3D等多風格的作品，請在此自由地發揮你的創意！"
+          "q": "什麼是FastImage AI ？",
+          "a": "FastImage AI 是一個完全免費、基於多種AI繪畫模型的線上文生圖（text to image）、圖生圖（image to image）服務網站，優秀的AI設計繪圖工具，支援現實、動漫、插畫、3D等多風格的作品，請在此自由地發揮你的創意！"
         },
         {
-          "q": "Dreamifly是完全免費的嗎？",
+          "q": "FastImage AI 是完全免費的嗎？",
           "a": "沒錯，我們提供完全免費的生圖服務。"
         },
         {
-          "q": "Dreamifly能創作什麼樣的圖像？",
+          "q": "FastImage AI 能創作什麼樣的圖像？",
           "a": "各種各樣的風格，貼近現實的場景，藝術性的插畫，動漫風格的畫像等等。"
         },
         {
-          "q": "Dreamifly生成的圖像用於商業用途嗎？",
+          "q": "FastImage AI 生成的圖像用於商業用途嗎？",
           "a": "當然，你擁有對生成圖形的使用權，不論個人還是商業目的都完全沒問題。"
         },
         {
-          "q": "Dreamifly提供哪些模型？",
+          "q": "FastImage AI 提供哪些模型？",
           "a": "HiDream-I1滿血版、Flux.1-Dev以及未來更多開源模型。"
         },
         {
-          "q": "我需要建立一個帳戶並登入才能使用 Dreamifly 嗎？",
+          "q": "我需要建立一個帳戶並登入才能使用 FastImage AI  嗎？",
           "a": "不，你可以直接使用我們的生圖功能。"
         }
       ]
@@ -310,13 +310,13 @@
     "community": "社群",
 
     "quickGenerate": "快速生成",
-    "siteName": "Dreamifly",
+    "siteName": "FastImage AI",
     "switchLanguage": "切換語言",
     "friends": "友鏈",
     "workflows": "工作流"
   },
   "footer": {
-    "copyright": "Dreamifly 版權所有。"
+    "copyright": "FastImage AI 版權所有。"
   },
   "auth": {
     "login": "登入",
